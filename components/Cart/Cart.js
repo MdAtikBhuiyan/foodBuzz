@@ -87,6 +87,9 @@ const Cart = () => {
             <Pressable style={{ marginTop: 15 }}>
                 <Text style={{ color: 'gray', fontSize: 18, fontWeight: 'bold' }}> {"< Back"} </Text>
             </Pressable>
+            <View>
+                <Text style={{ textAlign: "center",fontSize:25, fontWeight:'bold', marginTop:10, color:'gray' }}>Cart List</Text>
+            </View>
             <View style={style.cartContainer}>
                 {
                     cart ?
@@ -100,7 +103,7 @@ const Cart = () => {
                             </View>
                         </>
                         :
-                        <Text>Cart Is Empty</Text>
+                        <Text>Empty</Text>
                 }
             </View>
             <Pressable onPress={pressHandler} style={style.button}>
@@ -118,7 +121,7 @@ const style = StyleSheet.create({
         marginLeft: 20
     },
     cartContainer: {
-        marginTop: 30,
+        marginTop: 20,
         marginBottom: 30,
         paddingTop: 10,
         paddingBottom: 10
