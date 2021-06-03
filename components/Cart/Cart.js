@@ -13,7 +13,7 @@ import { cartList } from '../../src/FakeData/database';
 import CartListCard from './CartListCard';
 import { stateContext } from '../../App';
 
-const Cart = () => {
+const Cart = ({ navigation }) => {
     const [cart, setCart] = useContext(stateContext);
     useEffect(() => {
         setCart(cartList)
@@ -84,11 +84,8 @@ const Cart = () => {
     }
     return (
         <ScrollView style={style.container}>
-            <Pressable style={{ marginTop: 15 }}>
-                <Text style={{ color: 'gray', fontSize: 18, fontWeight: 'bold' }}> {"< Back"} </Text>
-            </Pressable>
             <View>
-                <Text style={{ textAlign: "center",fontSize:25, fontWeight:'bold', marginTop:10, color:'gray' }}>Cart List</Text>
+                <Text style={{ textAlign: "center", fontSize: 25, fontWeight: 'bold', marginTop: 10, color: 'gray' }}>Cart List</Text>
             </View>
             <View style={style.cartContainer}>
                 {
