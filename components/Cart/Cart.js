@@ -1,26 +1,21 @@
 import React, { useContext, useEffect } from 'react';
 import {
-    SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
-    Button,
     Text,
     View,
     Pressable
 } from 'react-native';
-import { cartList } from '../../src/FakeData/database';
 import CartListCard from './CartListCard';
 import { stateContext } from '../../App';
 
 const Cart = ({ navigation }) => {
-    const [cart, setCart] = useContext(stateContext);
-    useEffect(() => {
-        setCart(cartList)
-    }, [cart])
+    const { cartState } = useContext(stateContext);
+    const [cart, setCart] = cartState;
 
     const pressHandler = () => {
-        alert("Pressed")
+        alert("Your Order Has Been Placed")
+        setCart(null);
     }
 
     const quantityIncrease = (id) => {
