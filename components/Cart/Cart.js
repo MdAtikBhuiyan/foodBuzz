@@ -1,11 +1,5 @@
 import React, { useContext } from 'react';
-import {
-    ScrollView,
-    StyleSheet,
-    Text,
-    View,
-    Pressable
-} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
 import CartListCard from './CartListCard';
 import { stateContext } from '../../App';
 
@@ -14,26 +8,31 @@ const Cart = () => {
     const [cart, setCart] = cartState;
 
     const pressHandler = () => {
+
         alert("Your Order Has Been Placed")
         setCart(null);
     }
 
     const quantityIncrease = (id) => {
-        const item = cart.find(ct => ct.id === id)
-        if (item.quantity >= 0) {
-            item.quantity = item.quantity + 1;
+
+        const items = cart.find(crt => crt.id === id)
+
+        if (items.quantity >= 0) {
+            items.quantity = items.quantity + 1;
         }
         else {
-            item.quantity = 0;
+            items.quantity = 0;
         }
-        let newCart = cart.filter(ct => ct.id !== id)
-        newCart = [...newCart, item]
+        let newCarts = cart.filter(crt => crt.id !== id)
+        newCarts = [...newCarts, items]
 
         const compare = (a, b) => {
+
             const idA = a.id.toUpperCase();
             const idB = b.id.toUpperCase();
 
             let comparison = 0;
+
             if (idA > idB) {
                 comparison = 1;
             } else if (idA < idB) {
@@ -41,24 +40,29 @@ const Cart = () => {
             }
             return comparison;
         }
-        setCart(newCart.sort(compare));
+
+        setCart(newCarts.sort(compare));
     }
     const quantityDecrease = (id) => {
-        const item = cart.find(ct => ct.id === id)
-        if (item.quantity > 0) {
-            item.quantity = item.quantity - 1;
+
+        const items = cart.find(crt => crt.id === id)
+
+        if (items.quantity > 0) {
+            items.quantity = items.quantity - 1;
         }
         else {
-            item.quantity = 0;
+            items.quantity = 0;
         }
-        let newCart = cart.filter(ct => ct.id !== id)
-        newCart = [...newCart, item]
+        let newCarts = cart.filter(crt => crt.id !== id)
+        newCarts = [...newCarts, items]
 
         const compare = (a, b) => {
+
             const idA = a.id.toUpperCase();
             const idB = b.id.toUpperCase();
 
             let comparison = 0;
+
             if (idA > idB) {
                 comparison = 1;
             } else if (idA < idB) {
@@ -66,23 +70,27 @@ const Cart = () => {
             }
             return comparison;
         }
-        setCart(newCart.sort(compare));
+        setCart(newCarts.sort(compare));
     }
 
     const totalCalculation = () => {
         let total = 0;
-        cart.map((ct) => {
-            const { price, quantity } = ct;
+        cart.map((crt) => {
+            const { price, quantity } = crt;
             total = total + (price * quantity);
         })
         return total;
     }
     return (
+
         <ScrollView style={style.container}>
+
             <View>
                 <Text style={{ textAlign: "center", fontSize: 25, fontWeight: 'bold', marginTop: 10, color: 'gray' }}>Cart List</Text>
             </View>
+
             <View style={style.cartContainer}>
+
                 {
                     cart ?
                         <>
@@ -98,6 +106,7 @@ const Cart = () => {
                         <Text>Empty</Text>
                 }
             </View>
+
             <Pressable onPress={pressHandler} style={style.button}>
                 <Text style={style.text}>Checkout</Text>
             </Pressable>
@@ -119,6 +128,14 @@ const style = StyleSheet.create({
         paddingBottom: 10
 
     },
+
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+    },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -129,13 +146,6 @@ const style = StyleSheet.create({
         fontSize: 50,
         backgroundColor: '#17A2B8',
     },
-    text: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-    }
 })
 
 

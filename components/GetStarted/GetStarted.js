@@ -12,8 +12,10 @@ import {
 const GetStarted = ({ navigation }) => {
     return (
         <View>
-            <Text>This is get started</Text>
+
+            <Text>This is Get Started</Text>
             <Button onPress={()=>navigation.navigate('Home')} title="GET STARTED" />
+
         </View>
     );
 };

@@ -74,12 +74,6 @@ const style = StyleSheet.create({
         alignItems:'center',
         marginTop: 50
     },
-    input: {
-        backgroundColor: 'white',
-        padding: 13,
-        width: 200,
-        flex: 3
-    },
     buttonCart: {
         width: 60,
         height: 60,
@@ -92,6 +86,16 @@ const style = StyleSheet.create({
         fontSize: 10,
         backgroundColor: '#17A2B8'
     },
+    input: {
+        backgroundColor: 'white',
+        padding: 13,
+        width: 200,
+        flex: 3
+    },
+    btntxt: {
+        fontSize: 15,
+        color: 'white'
+    },
     button: {
         width: 60,
         alignItems: 'center',
@@ -103,10 +107,7 @@ const style = StyleSheet.create({
         fontSize: 10,
         backgroundColor: '#17A2B8'
     },
-    btntxt: {
-        fontSize: 15,
-        color: 'white'
-    }
+    
 })
 
 export default Home;

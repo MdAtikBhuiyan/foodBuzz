@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 
-const FoodCard = ({ fd, addToCartHandler }) => {
-    const { img, category, id, name, price } = fd;
+const FoodCard = ({ food, addToCartHandler }) => {
+    const { img, category, id, name, price } = food;
     return (
         <View style={style.border}>
             <View>
