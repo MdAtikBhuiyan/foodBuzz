@@ -1,9 +1,4 @@
-/* 
-https://i.ibb.co/92VC25k/cheese-Pizza.png
-https://i.ibb.co/0Q1Hn8F/chicken-Burger.png
-https://i.ibb.co/nQpdZkd/meat-Pizza.png
-https://i.ibb.co/L9mtQCG/sushi-Makizushi.png
- */
+
 export const foodList = [
   {
     id: '1',
@@ -68,3 +63,10 @@ export const cartList = [
     quantity: 2
   }
 ]
+
+/* 
+https://i.ibb.co/92VC25k/cheese-Pizza.png
+https://i.ibb.co/0Q1Hn8F/chicken-Burger.png
+https://i.ibb.co/nQpdZkd/meat-Pizza.png
+https://i.ibb.co/L9mtQCG/sushi-Makizushi.png
+ */
