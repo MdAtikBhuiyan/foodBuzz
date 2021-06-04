@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 
 const FoodCard = ({ fd, addToCartHandler }) => {
-    const { id, name, price, img, category } = fd;
+    const { img, category, id, name, price } = fd;
     return (
         <View style={style.border}>
             <View>
@@ -23,11 +23,6 @@ const FoodCard = ({ fd, addToCartHandler }) => {
 };
 
 const style = StyleSheet.create({
-    image: {
-        width: 100,
-        height: 100,
-        resizeMode: 'stretch'
-    },
     border: {
         borderWidth: 1,
         borderStyle: 'solid',
@@ -37,11 +32,20 @@ const style = StyleSheet.create({
         margin: 15,
         padding: 10
     },
+    image: {
+        width: 100,
+        height: 100,
+        resizeMode: 'stretch'
+    },
     text: {
         fontSize: 15,
         fontWeight: 'bold',
         marginTop: 10,
         textAlign: 'center'
+    },
+    btntxt: {
+        fontSize: 20,
+        color: 'white'
     },
     button: {
         width: 30,
@@ -52,10 +56,7 @@ const style = StyleSheet.create({
         fontSize: 10,
         backgroundColor: '#17A2B8'
     },
-    btntxt: {
-        fontSize: 20,
-        color: 'white'
-    }
+   
 })
 
 export default FoodCard;
