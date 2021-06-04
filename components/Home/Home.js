@@ -1,10 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import {
-    SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
-    Button,
     Text,
     View,
     Pressable,

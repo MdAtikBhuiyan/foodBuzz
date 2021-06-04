@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {
     ScrollView,
     StyleSheet,
@@ -9,7 +9,7 @@ import {
 import CartListCard from './CartListCard';
 import { stateContext } from '../../App';
 
-const Cart = ({ navigation }) => {
+const Cart = () => {
     const { cartState } = useContext(stateContext);
     const [cart, setCart] = cartState;
 
